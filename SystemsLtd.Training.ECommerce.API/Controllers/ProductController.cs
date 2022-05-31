@@ -123,5 +123,10 @@ namespace SystemsLtd.Training.ECommerce.API.Controllers
         }
         #endregion
 
+        public int? Sum(int? a, int? b)
+        {
+            return a + b;
+        }
+
     }
 }

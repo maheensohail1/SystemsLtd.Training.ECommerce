@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using SystemsLtd.Training.ECommerce.Repository;
+using SystemsLtd.Training.ECommerce.API.Middleware;
 using SystemsLtd.Training.ECommerce.Repository.Interface;
 using SystemsLtd.Training.ECommerce.Service;
 using SystemsLtd.Training.ECommerce.Service.Interface;
@@ -27,6 +28,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseMiddleware<ExceptionHandlingMiddleware>();
+app.UseMiddleware<HeaderValueMiddleware>();
 
 app.UseHttpsRedirection();
 
